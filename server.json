@@ -1,0 +1,33 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dk.cvrradar/cvrradar",
+  "description": "Danish company data from CVR: search, financials, owners, credit rating and digital profile.",
+  "title": "cvrradar",
+  "version": "0.1.1",
+  "websiteUrl": "https://cvrradar.dk/ai",
+  "icons": [
+    {
+      "src": "https://cvrradar.dk/favicon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    },
+    {
+      "src": "https://cvrradar.dk/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.cvrradar.dk/mcp",
+      "headers": [
+        {
+          "description": "Optional: Bearer cvr_… API key from https://cvrradar.dk/login. Without it, clients use OAuth 2.1.",
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ]
+    }
+  ]
+}
