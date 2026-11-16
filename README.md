@@ -101,7 +101,7 @@ The free key gives 1,000 lookups per day on master data and people, and 100 look
 
 ## Tools
 
-The MCP server exposes 12 tools. Descriptions below are short summaries; the server returns the full descriptions with examples from `tools/list`.
+The MCP server exposes 19 tools, 6 prompts and 2 resources. Descriptions below are short summaries; the server returns the full descriptions with examples from `tools/list`.
 
 | Tool | What it does |
 |------|--------------|
@@ -116,9 +116,22 @@ The MCP server exposes 12 tools. Descriptions below are short summaries; the ser
 | `nye_virksomheder` | Newly registered companies with filters on industry, municipality, form and date |
 | `sammenlign_virksomheder` | Key figures for 2 to 5 companies side by side |
 | `branche_benchmark` | A company's key figures against its industry median |
+| `relaterede_virksomheder` | Group companies, shared management, shared address and auditor |
+| `produktionsenheder` | Production units (shops, branches, departments) with address, industry and employees |
+| `ejendomme` | Properties and registered charges (an empty answer means not checked yet, not "no properties") |
+| `branchetal` | A company's placement in its industry per key figure, or an industry's distribution |
+| `konkurser` | Latest bankruptcies and dissolutions, filtered on industry and municipality (companies only) |
+| `find_virksomheder` | Advanced search with filters on industry, place, form, size and figures (counts one lookup per row returned) |
+| `fuld_rapport` | The full company report as JSON (needs a purchase of the report or the Fuld plan) |
 | `overvaag_virksomhed` | Follow a company and get notified of events by webhook or daily mail |
 
 Accounts, credit rating, owner graph, digital profile and SEO data need a paid plan beyond the free monthly allowance (see the plans page).
+
+## Prompts and resources
+
+Prompts: `kredittjek_af_kunde` (credit check with a recommendation), `due_diligence` (owners, management, relations, history and production units), `branchebillede` (an industry, optionally in a municipality), `konkursovervaagning` (latest bankruptcies and suggested monitoring), `tjek_ny_kunde` and `nye_uden_hjemmeside`.
+
+Resources: `cvrradar://virksomhed/{cvr}` (the company card as markdown) and `cvrradar://datakilder` (data sources and when each was last updated).
 
 ## Example prompts
 
